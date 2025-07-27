@@ -170,41 +170,43 @@
 
 <!-- Hero Section -->
 <section id="home" class="relative text-white py-20 md:py-32 overflow-hidden">
-  <!-- Background Layers -->
+  <!-- Background Container -->
   <div class="absolute inset-0 bg-blue-900 bg-gradient-to-r from-blue-900 to-blue-700">
-    <!-- Modern image loading with multiple fallbacks -->
-    <picture>
-      <!-- WebP format for better compression (recommended) -->
-      <source srcset="https://imagedelivery.net/XdEFU3kpyBrKNS6wlVzncQ/3dd4f091-e849-4cd8-eaf8-e4b741207900/public" type="image/webp">
-      
-      <!-- Original image fallback -->
-      <img src="https://imagedelivery.net/XdEFU3kpyBrKNS6wlVzncQ/3dd4f091-e849-4cd8-eaf8-e4b741207900/public" 
-           alt="Background" 
-           class="w-full h-full object-cover opacity-20"
-           loading="eager"
-           onerror="this.style.display='none'">
-    </picture>
+    <!-- Fallback System (3 attempts to load image) -->
+    
+    <!-- Method 1: Direct img tag -->
+    <img src="bg.jpg" 
+         alt="Company Background"
+         class="absolute inset-0 w-full h-full object-cover opacity-20"
+         loading="eager"
+         onerror="this.style.display='none'; document.getElementById('bg-fallback').style.display='block'">
+    
+    <!-- Method 2: Background-image fallback -->
+    <div id="bg-fallback" 
+         class="absolute inset-0 w-full h-full bg-[url('bg.jpg')] bg-cover bg-center opacity-20 hidden"
+         style="display: none;"
+         onerror="this.style.display='none'"></div>
   </div>
 
-    <!-- Content Container -->
-    <div class="container mx-auto px-6 relative z-10">
+  <!-- Content Container -->
+  <div class="container mx-auto px-6 relative z-10">
     <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 md:mb-5 animate-fadeIn">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 md:mb-5 animate-fadeIn">
         Your Trusted Partner in Business Management, Auditing, Accounting, Immigration, and Logistics Services
-        </h1>
-        <p class="text-lg md:text-xl mb-6 md:mb-7 opacity-90 animate-fadeIn delay-100">
+      </h1>
+      <p class="text-lg md:text-xl mb-6 md:mb-7 opacity-90 animate-fadeIn delay-100">
         Expert guidance and seamless execution for business setup in UAE, immigration across the globe, and logistics solutions worldwide.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 animate-fadeIn delay-200">
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 animate-fadeIn delay-200">
         <a href="#contact" class="btn-primary px-6 py-2.5 sm:px-8 sm:py-3 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:scale-105 transition-transform duration-300">
-            Get Free Consultation
+          Get Free Consultation
         </a>
         <a href="#business" class="bg-white text-blue-900 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:bg-gray-100 hover:scale-105 transition-transform duration-300">
-            Start Your Business
+          Start Your Business
         </a>
-        </div>
+      </div>
     </div>
-    </div>
+  </div>
 
   <!-- Animation Styles -->
   <style>
@@ -218,6 +220,22 @@
     .delay-100 { animation-delay: 0.1s; }
     .delay-200 { animation-delay: 0.2s; }
   </style>
+
+  <!-- Final Fallback Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // If no image loaded after 1 second, ensure fallback
+      setTimeout(function() {
+        const bgImg = document.querySelector('#home img[src="bg.jpg"]');
+        const bgDiv = document.getElementById('bg-fallback');
+        
+        if (bgImg && bgImg.naturalWidth === 0) {
+          bgImg.style.display = 'none';
+          bgDiv.style.display = 'block';
+        }
+      }, 1000);
+    });
+  </script>
 </section>
 
   <!-- Trust Indicators -->
