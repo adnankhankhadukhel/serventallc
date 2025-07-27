@@ -1156,54 +1156,61 @@
           </div>
         </div>
         
-        <div class="lg:w-1/2">
-          <div class="bg-gray-50 p-8 rounded-xl shadow-md">
-            <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+         <div class="lg:w-1/2">
+        <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+          <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+          
+          <!-- Form with Formspree but custom messages -->
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_KEY" method="POST" id="contactForm">
+            <div class="mb-6">
+              <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+              <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
             
-            <form action="https://formspree.io/f/YOUR_FORMSPREE_KEY" method="POST" id="contactForm">
-              <div class="mb-6">
-                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              </div>
-              
-              <div class="mb-6">
-                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
-                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              </div>
-              
-              <div class="mb-6">
-                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-              </div>
-              
-              <div class="mb-6">
-                <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
-                <select id="service" name="service" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <option value="">Select a service</option>
-                  <option value="business-setup">Business Setup</option>
-                  <option value="audit-accounting">Audit & Accounting</option>
-                  <option value="immigration">Immigration & Visa</option>
-                  <option value="logistics">Freight Forwarding</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div class="mb-6">
-                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message *</label>
-                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-              </div>
-              
-              <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold text-lg">
-                Submit Message
-              </button>
-              <input type="hidden" name="_subject" value="New contact form submission">
-              <input type="text" name="_gotcha" style="display:none">
-            </form>
-          </div>
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+              <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div class="mb-6">
+              <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div class="mb-6">
+              <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
+              <select id="service" name="service" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Select a service</option>
+                <option value="business-setup">Business Setup</option>
+                <option value="audit-accounting">Audit & Accounting</option>
+                <option value="immigration">Immigration & Visa</option>
+                <option value="logistics">Freight Forwarding</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="mb-6">
+              <label for="message" class="block text-gray-700 font-medium mb-2">Your Message *</label>
+              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            
+            <!-- Message container (hidden by default) -->
+            <div id="formMessage" class="hidden mb-4 p-4 rounded"></div>
+            
+            <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold text-lg">
+              Submit Message
+            </button>
+            
+            <!-- Formspree hidden fields -->
+            <input type="hidden" name="_subject" value="New contact form submission">
+            <input type="text" name="_gotcha" style="display:none">
+          </form>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Map Section -->
   <section class="h-96 bg-gray-200">
@@ -1436,6 +1443,54 @@
         `;
     }
     }
+
+    // form handling
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formMessage = document.getElementById('formMessage');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // Show loading state
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'Sending...';
+    
+    // Hide any previous messages
+    formMessage.classList.add('hidden');
+    
+    try {
+      // Send to Formspree
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Show success message
+        formMessage.textContent = 'Thank you! Your message has been sent successfully. We will contact you soon.';
+        formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+        formMessage.classList.add('bg-green-100', 'text-green-700');
+        
+        // Reset form
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      // Show error message
+      formMessage.textContent = 'There was an error sending your message. Please try again later or contact us directly.';
+      formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+      formMessage.classList.add('bg-red-100', 'text-red-700');
+    } finally {
+      // Reset button
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Submit Message';
+    }
+  });
     
     // Initialize map when window loads
     window.initMap = initMap;
