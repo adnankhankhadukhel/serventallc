@@ -204,6 +204,23 @@
   [data-scroll] {
     scroll-behavior: smooth;
   }
+    /* Form message styles */
+    #formMessage {
+    display: none;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+    }
+    #formMessage.success {
+    display: block;
+    background-color: #d1fae5;
+    color: #065f46;
+    }
+    #formMessage.error {
+    display: block;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    }
 
   </style>
 </head>
@@ -1159,7 +1176,7 @@
          <div class="lg:w-1/2">
         <div class="bg-gray-50 p-8 rounded-xl shadow-md">
           <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
-          
+          <div id="formMessage" class="hidden mb-4 p-4 rounded"></div>
           <!-- Form with Formspree but custom messages -->
           <form action="https://formspree.io/f/YOUR_FORMSPREE_KEY" method="POST" id="contactForm">
             <div class="mb-6">
@@ -1194,8 +1211,6 @@
               <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
             </div>
             
-            <!-- Message container (hidden by default) -->
-            <div id="formMessage" class="hidden mb-4 p-4 rounded"></div>
             
             <button type="submit" class="btn-primary w-full py-3 rounded-lg font-semibold text-lg">
               Submit Message
@@ -1204,6 +1219,8 @@
             <!-- Formspree hidden fields -->
             <input type="hidden" name="_subject" value="New contact form submission">
             <input type="text" name="_gotcha" style="display:none">
+            <!-- Add this hidden field to prevent redirect -->
+            <input type="hidden" name="_next" value="#contact">
           </form>
         </div>
       </div>
@@ -1444,7 +1461,7 @@
     }
     }
 
-    // form handling
+// Form handling
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -1453,45 +1470,45 @@
     const submitButton = form.querySelector('button[type="submit"]');
     
     // Show loading state
+    const originalButtonText = submitButton.innerHTML;
     submitButton.disabled = true;
-    submitButton.innerHTML = 'Sending...';
-    
-    // Hide any previous messages
-    formMessage.classList.add('hidden');
+    submitButton.innerHTML = '<span class="flex items-center justify-center"><svg class="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending...</span>';
     
     try {
-      // Send to Formspree
-      const response = await fetch(form.action, {
+        const response = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: {
-          'Accept': 'application/json'
+            'Accept': 'application/json'
         }
-      });
-      
-      if (response.ok) {
+        });
+        
+        if (response.ok) {
         // Show success message
-        formMessage.textContent = 'Thank you! Your message has been sent successfully. We will contact you soon.';
-        formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-        formMessage.classList.add('bg-green-100', 'text-green-700');
+        formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+        formMessage.className = 'success';
         
         // Reset form
         form.reset();
-      } else {
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+            formMessage.className = 'hidden';
+        }, 5000);
+        } else {
         throw new Error('Form submission failed');
-      }
+        }
     } catch (error) {
-      // Show error message
-      formMessage.textContent = 'There was an error sending your message. Please try again later or contact us directly.';
-      formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700');
-      formMessage.classList.add('bg-red-100', 'text-red-700');
+        // Show error message
+        formMessage.textContent = 'There was an error sending your message. Please try again later or contact us directly.';
+        formMessage.className = 'error';
     } finally {
-      // Reset button
-      submitButton.disabled = false;
-      submitButton.innerHTML = 'Submit Message';
+        // Reset button
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonText;
     }
-  });
-    
+    });
+
     // Initialize map when window loads
     window.initMap = initMap;
   </script>
