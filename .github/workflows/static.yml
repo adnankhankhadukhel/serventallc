@@ -29,7 +29,6 @@ jobs:
           FORMSPREE_KEY: ${{ secrets.FORMSPREE }}
           GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS }}
         run: |
-          # Replace placeholders with secrets
           sed -i "s|https://formspree.io/f/YOUR_FORMSPREE_KEY|https://formspree.io/f/$FORMSPREE_KEY|g" index.html
           sed -i "s|key=YOUR_GOOGLE_MAPS_KEY|key=$GOOGLE_MAPS_KEY|g" index.html
 
