@@ -191,6 +191,20 @@
   min-height: 300px; /* Minimum height */
   background-color: #f5f5f5; /* Fallback color */
   }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Keep your existing body scroll-behavior */
+  body {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optional: Add smooth transition for all scrollable elements */
+  [data-scroll] {
+    scroll-behavior: smooth;
+  }
+
   </style>
 </head>
 <body class="antialiased">
@@ -1276,16 +1290,31 @@
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function(e) {
         e.preventDefault();
         
         // Close mobile menu if open
-        mobileMenu.classList.remove('active');
+        if (mobileMenu) mobileMenu.classList.remove('active');
         
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Use CSS smooth scrolling if available
+            if ('scrollBehavior' in document.documentElement.style) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+            } else {
+            // Fallback for browsers that don't support scrollBehavior
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+            }
+        }
         });
-      });
     });
     
     // Google Maps Initialization
