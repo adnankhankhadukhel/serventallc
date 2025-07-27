@@ -111,6 +111,42 @@
       height: 100%;
       width: 100%;
     }
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Mobile specific styles */
+    @media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -1293,5 +1329,9 @@
     // Initialize map when window loads
     window.initMap = initMap;
   </script>
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/971507386804" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-whatsapp"></i>
+</a>
 </body>
 </html>
