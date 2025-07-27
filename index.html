@@ -28,7 +28,7 @@
     <script>
     function loadGoogleMaps() {
         const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvOkA_Ex-g5qGHUUQlyofpuZZJGPu0vo&callback=initMap`;
+        script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_KEY&callback=initMap`;
         script.async = true;
         script.defer = true;
         script.onerror = () => {
@@ -1440,7 +1440,7 @@
     const formData = new FormData(e.target);
     
     try {
-        const response = await fetch('https://formspree.io/f/mdkdgygq', {
+        const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_KEY', {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
