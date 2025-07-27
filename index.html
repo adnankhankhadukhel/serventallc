@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serventa LLC | Professional Audit & Business Setup Services in UAE</title>
-  <meta name="description" content="Premier audit, accounting, and company formation services in Dubai. UAE-licensed professionals ensuring compliance and seamless business setup since 2023.">
-  <meta name="keywords" content="Dubai audit firm, UAE company formation, business setup Dubai, accounting services UAE, corporate compliance, Ishtiaq Ahmad">
+  <title>Serventa LLC | Business Setup, Immigration & Logistics Services in UAE</title>
+  <meta name="description" content="Comprehensive business setup, global immigration, and freight forwarding services in Dubai. UAE-licensed professionals providing end-to-end solutions.">
+  <meta name="keywords" content="Dubai business setup, UAE company formation, global immigration services, freight forwarding Dubai, visa services UAE, logistics solutions">
   <meta name="author" content="Serventa LLC">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
   
-  <!-- Google Maps API (You need to get your own API key) -->
+  <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvOkA_Ex-g5qGHUUQlyofpuZZJGPu0vo&callback=initMap" async defer></script>
   
   <style>
@@ -69,6 +70,33 @@
     .footer-link:hover {
       color: var(--secondary);
     }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .service-icon {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    .animated-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .animated-underline:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--secondary);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .animated-underline:hover:after {
+      transform: scaleX(1);
+    }
     @media (max-width: 768px) {
       .mobile-menu {
         max-height: 0;
@@ -79,7 +107,6 @@
         max-height: 500px;
       }
     }
-    /* Google Maps Container */
     #map {
       height: 100%;
       width: 100%;
@@ -92,26 +119,20 @@
     <div class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
         <div class="flex items-center">
-          <!-- UPDATE YOUR LOGO HERE (two options) -->
-          <!-- Option 1: Text logo -->
           <a href="#" class="text-2xl font-bold text-blue-900 flex items-center">
             <span class="bg-blue-900 text-white px-3 py-1 rounded mr-2">S</span>
             <span>Serventa LLC</span>
           </a>
-          
-          <!-- Option 2: Image logo (uncomment and replace with your logo) -->
-          <!--
-          <a href="#" class="text-2xl font-bold text-blue-900 flex items-center">
-            <img src="images/logo.png" alt="Serventa LLC Logo" class="h-10">
-          </a>
-          -->
         </div>
         
         <div class="hidden md:flex space-x-8">
           <a href="#home" class="nav-link text-blue-900 font-medium">Home</a>
           <a href="#about" class="nav-link text-blue-900 font-medium">About</a>
           <a href="#services" class="nav-link text-blue-900 font-medium">Services</a>
-          <a href="#why-us" class="nav-link text-blue-900 font-medium">Why Choose Us</a>
+          <a href="#business" class="nav-link text-blue-900 font-medium">Business</a>
+          <a href="#immigration" class="nav-link text-blue-900 font-medium">Immigration</a>
+          <a href="#logistics" class="nav-link text-blue-900 font-medium">Logistics</a>
+          <a href="#why-us" class="nav-link text-blue-900 font-medium">Why Us</a>
           <a href="#contact" class="nav-link text-blue-900 font-medium">Contact</a>
         </div>
         
@@ -127,7 +148,10 @@
           <a href="#home" class="text-blue-900 font-medium px-2 py-1">Home</a>
           <a href="#about" class="text-blue-900 font-medium px-2 py-1">About</a>
           <a href="#services" class="text-blue-900 font-medium px-2 py-1">Services</a>
-          <a href="#why-us" class="text-blue-900 font-medium px-2 py-1">Why Choose Us</a>
+          <a href="#business" class="text-blue-900 font-medium px-2 py-1">Business</a>
+          <a href="#immigration" class="text-blue-900 font-medium px-2 py-1">Immigration</a>
+          <a href="#logistics" class="text-blue-900 font-medium px-2 py-1">Logistics</a>
+          <a href="#why-us" class="text-blue-900 font-medium px-2 py-1">Why Us</a>
           <a href="#contact" class="text-blue-900 font-medium px-2 py-1">Contact</a>
         </div>
       </div>
@@ -138,14 +162,14 @@
   <section id="home" class="hero-gradient text-white py-20 md:py-32">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Expert Audit & Business Setup Services in UAE</h1>
-        <p class="text-xl md:text-2xl mb-8 opacity-90">Trusted by over 50 businesses since 2023. UAE-licensed professionals ensuring compliance and seamless company formation.</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Your Trusted Partner for Business, Immigration & Logistics Services</h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90">Expert guidance and seamless execution for business setup in Dubai, immigration across the globe, and logistics solutions worldwide.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-semibold text-lg shadow-lg">
             Get Free Consultation
           </a>
-          <a href="#services" class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-100 transition">
-            Our Services
+          <a href="#business" class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-100 transition">
+            Start Your Business
           </a>
         </div>
       </div>
@@ -161,12 +185,12 @@
           <span class="font-medium">UAE Licensed</span>
         </div>
         <div class="flex items-center">
-          <i class="fas fa-user-tie text-blue-500 text-2xl mr-3"></i>
-          <span class="font-medium">Certified Professionals</span>
+          <i class="fas fa-globe text-blue-500 text-2xl mr-3"></i>
+          <span class="font-medium">Global Network</span>
         </div>
         <div class="flex items-center">
-          <i class="fas fa-handshake text-yellow-500 text-2xl mr-3"></i>
-          <span class="font-medium">50+ Clients</span>
+          <i class="fas fa-bolt text-yellow-500 text-2xl mr-3"></i>
+          <span class="font-medium">Fast Processing</span>
         </div>
         <div class="flex items-center">
           <i class="fas fa-headset text-purple-500 text-2xl mr-3"></i>
@@ -176,222 +200,500 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="py-16 md:py-24 bg-white">
+  <!-- Core Services -->
+  <section id="services" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
-      <div class="flex flex-col lg:flex-row items-center gap-12">
-        <div class="lg:w-1/2">
-          <div class="relative">
-            <!-- UPDATE YOUR ABOUT IMAGE HERE -->
-            <!-- Recommended: 800x600px, <300KB -->
-            <div class="bg-blue-100 w-full h-96 rounded-lg overflow-hidden">
-              <!-- Replace div below with your actual image -->
-              <!-- <img src="images/about-office.jpg" alt="Serventa LLC Office" class="w-full h-full object-cover"> -->
-              <img src="https://www.shutterstock.com/image-photo/business-man-auditor-internal-revenue-600nw-2490198867.jpg" alt="Serventa LLC Office" class="w-full h-full object-cover">
-              <div class="w-full h-full flex items-center justify-center text-gray-400">
-                [About Us Image Placeholder]
-              </div>
-            </div>
-            <div class="absolute -bottom-6 -right-6 bg-yellow-500 w-48 h-48 rounded-lg shadow-xl flex items-center justify-center">
-              <div class="text-center p-4">
-                <span class="block text-4xl font-bold text-blue-900">50+</span>
-                <span class="block text-blue-900 font-medium">Satisfied Clients</span>
-              </div>
-            </div>
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Core Services</h2>
+        <p class="text-lg text-gray-600">Comprehensive solutions across three key service domains</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Business Setup -->
+        <div class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="text-center mb-6">
+            <i class="uil uil-building service-icon"></i>
           </div>
+          <h3 class="text-xl font-bold text-blue-900 mb-4 text-center">Business Setup in UAE</h3>
+          <p class="text-gray-600 mb-4 text-center">Company formation, operations, auditing & PRO services under one roof.</p>
+          <a href="#business" class="flex items-center justify-center text-blue-900 font-medium hover:text-yellow-500 transition">
+            Learn More <i class="fas fa-arrow-right ml-2"></i>
+          </a>
         </div>
-        <div class="lg:w-1/2">
-          <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">About Serventa LLC</h2>
-          <p class="text-lg mb-6">Founded in 2023 by <span class="font-semibold">Ishtiaq Ahmad</span>, Serventa LLC has rapidly established itself as a premier provider of audit, accounting, and business setup services in the UAE.</p>
-          <p class="text-lg mb-8">Our team of certified professionals brings together decades of experience in UAE corporate compliance, financial auditing, and company formation across all major free zones and mainland jurisdictions.</p>
-          
-          <div class="mb-8">
-            <h3 class="text-xl font-semibold text-blue-900 mb-4">Our Founder</h3>
-            <div class="flex items-start">
-              <!-- UPDATE FOUNDER IMAGE HERE -->
-              <!-- Recommended: 150x150px, <100KB -->
-              <div class="bg-gray-200 w-16 h-16 rounded-full mr-4 overflow-hidden">
-                <!-- <img src="images/founder.jpg" alt="Ishtiaq Ahmad" class="w-full h-full object-cover"> -->
-              </div>
-              <div>
-                <h4 class="font-bold">Ishtiaq Ahmad</h4>
-                <p class="text-gray-600">CEO & Managing Partner</p>
-                <p class="mt-2">With over 15 years of experience in UAE financial services, Ishtiaq leads our team with a commitment to excellence and client success.</p>
-              </div>
-            </div>
+
+        <!-- Immigration -->
+        <div class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+        <div class="text-center mb-6">
+            <i class="fas fa-globe-americas service-icon"></i> <!-- Recommended for global visa services -->
+        </div>
+        <h3 class="text-xl font-bold text-blue-900 mb-4 text-center">Immigration & Visa Services</h3>
+        <p class="text-gray-600 mb-4 text-center">Work, student, and residence visas for Europe, USA, Canada, Australia & GCC.</p>
+        <a href="#immigration" class="flex items-center justify-center text-blue-900 font-medium hover:text-yellow-500 transition">
+            Learn More <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+        </div>
+        
+        <!-- Logistics -->
+        <div class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+          <div class="text-center mb-6">
+            <i class="uil uil-ship service-icon"></i>
           </div>
-          
-          <a href="#contact" class="inline-flex items-center text-blue-900 font-semibold hover:text-yellow-500 transition">
-            Meet Our Team
-            <i class="fas fa-arrow-right ml-2"></i>
+          <h3 class="text-xl font-bold text-blue-900 mb-4 text-center">Freight Forwarding & Customs</h3>
+          <p class="text-gray-600 mb-4 text-center">Global shipping, customs clearance & cargo logistics solutions.</p>
+          <a href="#logistics" class="flex items-center justify-center text-blue-900 font-medium hover:text-yellow-500 transition">
+            Learn More <i class="fas fa-arrow-right ml-2"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-16 md:py-24 bg-gray-50">
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">About Serventa LLC</h2>
+          <p class="text-lg mb-6">Serventa LLC is a licensed company based in Dubai and registered under Meydan Free Zone Authority. We are a team of highly experienced professionals providing expert solutions in three key domains:</p>
+          
+          <ul class="mb-6 space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Business Consultancy & Corporate Services</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Global Immigration & Visa Solutions</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Freight Forwarding & Logistics Management</span>
+            </li>
+          </ul>
+          
+          <p class="mb-8">Our vision is to empower entrepreneurs, investors, professionals, and students by simplifying complex processes and helping them succeed globally.</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-bold text-blue-900 mb-3 flex items-center">
+                <i class="uil uil-eye mr-2 text-yellow-500"></i> Our Vision
+              </h3>
+              <p class="text-gray-600">To be a leading global facilitator for business growth, immigration, and international trade.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="text-lg font-bold text-blue-900 mb-3 flex items-center">
+                <i class="uil uil-rocket mr-2 text-yellow-500"></i> Our Mission
+              </h3>
+              <p class="text-gray-600">To provide transparent, fast, and result-oriented services in business setup, global mobility, and trade logistics.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-1/2">
+          <div class="relative">
+            <div class="bg-blue-100 w-full h-96 rounded-lg overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Serventa LLC Team" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-6 -right-6 bg-yellow-500 w-48 h-48 rounded-lg shadow-xl flex items-center justify-center">
+              <div class="text-center p-4">
+                <span class="block text-4xl font-bold text-blue-900">10+</span>
+                <span class="block text-blue-900 font-medium">Years Experience</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-12">
+            <h3 class="text-xl font-semibold text-blue-900 mb-4">Our Values</h3>
+            <div class="flex flex-wrap gap-4">
+              <span class="bg-blue-100 text-blue-900 px-4 py-2 rounded-full">Professionalism</span>
+              <span class="bg-blue-100 text-blue-900 px-4 py-2 rounded-full">Integrity</span>
+              <span class="bg-blue-100 text-blue-900 px-4 py-2 rounded-full">Transparency</span>
+              <span class="bg-blue-100 text-blue-900 px-4 py-2 rounded-full">Customer-Centric</span>
+              <span class="bg-blue-100 text-blue-900 px-4 py-2 rounded-full">Reliability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Consultancy Services -->
+  <section id="business" class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Professional Services</h2>
-        <p class="text-lg text-gray-600">Comprehensive solutions tailored to your business needs in the UAE market.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Business Consultancy Services</h2>
+        <p class="text-lg text-gray-600">Complete business setup and operational services in Dubai and across the UAE</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Service 1 -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-md">
-          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-file-invoice-dollar text-blue-900 text-2xl"></i>
+        <div class="service-card bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-start">
+            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+              <i class="uil uil-building text-blue-900"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-blue-900 mb-2">Company Formation</h3>
+              <p class="text-gray-600">Mainland, Free Zone & Offshore company setup tailored to your business needs.</p>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-blue-900 mb-4">Financial Audit Services</h3>
+        </div>
+        
+        <div class="service-card bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-start">
+            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+              <i class="uil uil-file-contract text-blue-900"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-blue-900 mb-2">License Services</h3>
+              <p class="text-gray-600">Company license renewal, amendments, and liquidation/closure services.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="service-card bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-start">
+            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+              <i class="uil uil-user-md text-blue-900"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-blue-900 mb-2">Local Sponsor</h3>
+              <p class="text-gray-600">Reliable UAE local sponsor services for your business setup.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="service-card bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-start">
+            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+              <i class="uil uil-chart-line text-blue-900"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-blue-900 mb-2">Business Support</h3>
+              <p class="text-gray-600">Comprehensive business operations support and financial structuring.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="service-card bg-gray-50 p-6 rounded-lg">
+        <div class="flex items-start">
+            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+            <i class="fas fa-hand-holding-usd text-blue-900 text-xl"></i> <!-- Best all-rounder -->
+            </div>
+            <div>
+            <h3 class="text-lg font-bold text-blue-900 mb-2">Banking Assistance</h3>
+            <p class="text-gray-600">Corporate bank account opening support in UAE banks.</p>
+            </div>
+        </div>
+        </div>
+        
+        <div class="service-card bg-gray-50 p-6 rounded-lg">
+          <div class="flex items-start">
+            <div class="bg-blue-100 p-3 rounded-full mr-4 flex-shrink-0">
+              <i class="uil uil-file-alt text-blue-900"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-blue-900 mb-2">PRO Services</h3>
+              <p class="text-gray-600">Emirates ID, Labour Card, Medical, Visas, and all government processing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-semibold text-lg inline-block">
+          Get Business Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Immigration Services -->
+  <section id="immigration" class="py-16 md:py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Global Immigration & Visa Services</h2>
+        <p class="text-lg text-gray-600">Specialized in global mobility and immigration services across multiple countries</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+              <i class="uil uil-briefcase-alt text-blue-900 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-900">Work Visas</h3>
+          </div>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Statutory financial audits</span>
+              <span>Europe (Poland, Romania, Hungary, Portugal)</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Internal audit & risk assessment</span>
+              <span>Canada, USA, Australia</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>VAT compliance & filing</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Due diligence services</span>
+              <span>GCC countries (UAE, Saudi Arabia, Qatar)</span>
             </li>
           </ul>
         </div>
         
-        <!-- Service 2 -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-md">
-          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-building text-blue-900 text-2xl"></i>
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+              <i class="uil uil-graduation-cap text-blue-900 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-900">Student Visas</h3>
           </div>
-          <h3 class="text-xl font-bold text-blue-900 mb-4">Company Formation</h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Mainland company setup</span>
+              <span>Assistance for top universities worldwide</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Free zone registration</span>
+              <span>Canada, UK, USA, Australia</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Offshore company formation</span>
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Business licensing</span>
+              <span>Europe (Germany, France, Netherlands)</span>
             </li>
           </ul>
         </div>
         
-        <!-- Service 3 -->
-        <div class="service-card bg-white p-8 rounded-xl shadow-md">
-          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-calculator text-blue-900 text-2xl"></i>
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+              <i class="uil uil-plane-departure text-blue-900 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-900">Visit/Tourist Visas</h3>
           </div>
-          <h3 class="text-xl font-bold text-blue-900 mb-4">Accounting Services</h3>
           <ul class="space-y-3 text-gray-600">
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Bookkeeping & financial reporting</span>
+              <span>Quick processing for multiple destinations</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Payroll processing</span>
+              <span>Schengen visas</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>Management accounting</span>
+              <span>USA, UK, Canada visit visas</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mr-4">
+              <i class="uil uil-home text-blue-900 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-900">Residency & Citizenship</h3>
+          </div>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+              <span>Canada Express Entry</span>
             </li>
             <li class="flex items-start">
               <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-              <span>CFO advisory services</span>
+              <span>Australian PR</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+              <span>EU Blue Card</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+              <span>Citizenship by Investment Programs</span>
             </li>
           </ul>
         </div>
       </div>
       
-      <div class="text-center mt-12">
+      <div class="mt-12 text-center">
         <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-semibold text-lg inline-block">
-          Request Custom Solution
+          Get Visa Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logistics Services -->
+  <section id="logistics" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Freight Forwarding & Logistics</h2>
+        <p class="text-lg text-gray-600">Professional, cost-effective international shipping and logistics solutions</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="uil uil-ship text-blue-900 text-2xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Sea Freight</h3>
+          <p class="text-gray-600">FCL/LCL container shipping worldwide with competitive rates.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="uil uil-plane-fly text-blue-900 text-2xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Air Freight</h3>
+          <p class="text-gray-600">Express air cargo solutions for time-sensitive shipments.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="uil uil-truck text-blue-900 text-2xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Land Transport</h3>
+          <p class="text-gray-600">GCC & local land transportation with reliable carriers.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg text-center">
+          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="uil uil-clipboard-notes text-blue-900 text-2xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Customs Clearance</h3>
+          <p class="text-gray-600">Expert import & export customs clearance at UAE ports.</p>
+        </div>
+      </div>
+      
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-blue-900 text-white p-8 rounded-xl">
+          <h3 class="text-xl font-bold mb-4">Additional Logistics Services</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Door-to-Door Cargo Solutions</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Warehousing & Distribution</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>International Relocation Services</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Documentation & Compliance Handling</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-yellow-50 p-8 rounded-xl border border-yellow-200">
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Customs Clearing Agents</h3>
+          <p class="text-gray-600 mb-4">We act as licensed Customs Clearing Agents at all major UAE ports and airports, ensuring smooth clearance of your shipments.</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Jebel Ali Port</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>DXB International Airport</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-yellow-500 mt-1 mr-2"></i>
+              <span>Abu Dhabi Ports</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-semibold text-lg inline-block">
+          Get Logistics Quote
         </a>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section id="why-us" class="py-16 md:py-24 bg-white">
+  <section id="why-us" class="py-16 md:py-24 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Why Choose Serventa LLC?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Why Clients Trust Serventa LLC</h2>
         <p class="text-lg text-gray-600">What sets us apart in the competitive UAE market</p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="text-center p-6">
-          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-award text-blue-900 text-2xl"></i>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="feature-icon">
+            <i class="uil uil-package"></i>
           </div>
-          <h3 class="text-xl font-bold text-blue-900 mb-3">Certified Experts</h3>
-          <p class="text-gray-600">Our team includes ACCA, CPA, and UAE-licensed auditors with extensive local experience.</p>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">All-In-One Solution</h3>
+          <p class="text-gray-600">From business licenses to visas and cargo handling — we cover it all under one roof.</p>
         </div>
         
-        <div class="text-center p-6">
-          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-hand-holding-usd text-blue-900 text-2xl"></i>
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="feature-icon">
+            <i class="uil uil-users-alt"></i>
           </div>
-          <h3 class="text-xl font-bold text-blue-900 mb-3">Cost-Effective</h3>
-          <p class="text-gray-600">Transparent pricing with no hidden fees, saving you up to 30% compared to big firms.</p>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">Experienced Team</h3>
+          <p class="text-gray-600">A group of industry professionals with over a decade of experience in their fields.</p>
         </div>
         
-        <div class="text-center p-6">
-          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-clock text-blue-900 text-2xl"></i>
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="feature-icon">
+            <i class="uil uil-clock"></i>
           </div>
-          <h3 class="text-xl font-bold text-blue-900 mb-3">Fast Processing</h3>
-          <p class="text-gray-600">Company setup completed in as little as 3 business days with our expedited services.</p>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">Quick Turnaround</h3>
+          <p class="text-gray-600">Fast processing with complete transparency and no hidden charges.</p>
         </div>
         
-        <div class="text-center p-6">
-          <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-user-shield text-blue-900 text-2xl"></i>
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="feature-icon">
+            <i class="uil uil-shield-check"></i>
           </div>
-          <h3 class="text-xl font-bold text-blue-900 mb-3">Client Confidentiality</h3>
-          <p class="text-gray-600">Strict data protection policies ensuring your business information remains secure.</p>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">Compliance & Accuracy</h3>
+          <p class="text-gray-600">All services are aligned with UAE regulations and global standards.</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="feature-icon">
+            <i class="uil uil-globe"></i>
+          </div>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">Global Network</h3>
+          <p class="text-gray-600">Trusted partners across Europe, North America, Australia, and the Middle East.</p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-md text-center">
+          <div class="feature-icon">
+            <i class="uil uil-headphones"></i>
+          </div>
+          <h3 class="text-xl font-bold text-blue-900 mb-3">Dedicated Support</h3>
+          <p class="text-gray-600">Personal account manager for each client with 24/7 availability.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section class="py-16 md:py-24 bg-gray-50">
+  <section class="py-16 md:py-24 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">What Our Clients Say</h2>
-        <p class="text-lg text-gray-600">Trusted by businesses across the UAE</p>
+        <p class="text-lg text-gray-600">Trusted by businesses and individuals across the UAE</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="testimonial-card p-8 rounded-xl">
           <div class="flex items-center mb-6">
-            <!-- UPDATE CLIENT IMAGE HERE -->
-            <!-- Recommended: 100x100px, <50KB -->
             <div class="bg-gray-300 w-12 h-12 rounded-full mr-4 overflow-hidden">
-              <!-- <img src="images/client1.jpg" alt="Client" class="w-full h-full object-cover"> -->
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
             </div>
             <div>
-              <h4 class="font-bold">Ahmed Ali Al-Mansoori</h4>
+              <h4 class="font-bold">Ahmed Al-Mansoori</h4>
               <p class="text-gray-600">CEO, Al-Mansoori Trading</p>
             </div>
           </div>
-          <p class="text-gray-700 italic mb-6">"Serventa LLC handled our mainland company setup with exceptional professionalism. Their knowledge of Dubai Economic Department requirements saved us weeks of paperwork."</p>
+          <p class="text-gray-700 italic mb-6">"Serventa LLC handled our mainland company setup with exceptional professionalism. Their knowledge of Dubai Economic Department requirements saved us weeks of paperwork and got our business operational in record time."</p>
           <div class="flex text-yellow-400">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -403,17 +705,15 @@
         
         <div class="testimonial-card p-8 rounded-xl">
           <div class="flex items-center mb-6">
-            <!-- UPDATE CLIENT IMAGE HERE -->
-            <!-- Recommended: 100x100px, <50KB -->
             <div class="bg-gray-300 w-12 h-12 rounded-full mr-4 overflow-hidden">
-              <!-- <img src="images/client2.jpg" alt="Client" class="w-full h-full object-cover"> -->
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-full h-full object-cover">
             </div>
             <div>
-              <h4 class="font-bold">Sarah Johnson janes</h4>
+              <h4 class="font-bold">Sarah Johnson</h4>
               <p class="text-gray-600">Finance Director, TechGulf FZCO</p>
             </div>
           </div>
-          <p class="text-gray-700 italic mb-6">"As a growing tech company, we needed auditors who understand startup challenges. Serventa's team provided not just compliance but valuable financial insights for our scaling plans."</p>
+          <p class="text-gray-700 italic mb-6">"As a growing tech company, we needed auditors who understand startup challenges. Serventa's team provided not just compliance but valuable financial insights for our scaling plans. Their immigration team also helped relocate our key staff efficiently."</p>
           <div class="flex text-yellow-400">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -429,11 +729,16 @@
   <!-- CTA Section -->
   <section class="py-16 md:py-24 hero-gradient text-white">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Grow Your Business in UAE?</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">Schedule a free consultation with our experts today and discover how we can help your business thrive.</p>
-      <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-semibold text-lg inline-block">
-        Get Started Now
-      </a>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Business, Relocate, or Ship Goods?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Schedule a free consultation with our experts today and discover how we can help you achieve your goals.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact" class="btn-primary px-8 py-3 rounded-full font-semibold text-lg shadow-lg">
+          Get Free Consultation
+        </a>
+        <a href="tel:+971562026553" class="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-100 transition">
+          <i class="fas fa-phone-alt mr-2"></i> +971 56 202 6553
+        </a>
+      </div>
     </div>
   </section>
 
@@ -443,7 +748,7 @@
       <div class="flex flex-col lg:flex-row gap-12">
         <div class="lg:w-1/2">
           <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Contact Us</h2>
-          <p class="text-lg mb-8">Our team is ready to assist you with all your audit and business setup needs in the UAE.</p>
+          <p class="text-lg mb-8">Let's talk about how we can support your business, immigration, or logistics needs.</p>
           
           <div class="space-y-6">
             <div class="flex items-start">
@@ -452,7 +757,7 @@
               </div>
               <div>
                 <h3 class="font-bold text-lg text-blue-900">Our Office</h3>
-                <p class="text-gray-600">6th Floor, Maydan Grandstand<br>Meydan Road, Nad Al Sheba <br>Dubai, UAE</p>
+                <p class="text-gray-600">Serventa LLC<br>Meydan Free Zone<br>Dubai, UAE</p>
               </div>
             </div>
             
@@ -473,9 +778,9 @@
                 <i class="fas fa-phone-alt text-blue-900"></i>
               </div>
               <div>
-                <h3 class="font-bold text-lg text-blue-900">Call & Whatsapp Us</h3>
+                <h3 class="font-bold text-lg text-blue-900">Call & WhatsApp Us</h3>
                 <p class="text-gray-600">
-                  <a href="tel:+97142345678" class="hover:text-yellow-500 transition">+971 507387804</a><br>
+                  <a href="tel:+971562026553" class="hover:text-yellow-500 transition">+971 56 202 6553</a><br>
                 </p>
               </div>
             </div>
@@ -486,7 +791,22 @@
               </div>
               <div>
                 <h3 class="font-bold text-lg text-blue-900">Working Hours</h3>
-                <p class="text-gray-600">Sunday - Thursday: 8:30 AM - 6:00 PM<br>Friday: Closed<br>Saturday: 10:00 AM - 4:00 PM</p>
+                <p class="text-gray-600">Monday – Saturday: 9:00 AM – 6:00 PM<br>Sunday: Closed</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start pt-4">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-share-alt text-blue-900"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg text-blue-900 mb-2">Follow Us</h3>
+                <div class="flex space-x-4">
+                  <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                  <a href="#" class="text-gray-600 hover:text-pink-600 transition"><i class="fab fa-instagram text-xl"></i></a>
+                  <a href="#" class="text-gray-600 hover:text-blue-400 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                  <a href="#" class="text-gray-600 hover:text-green-500 transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                </div>
               </div>
             </div>
           </div>
@@ -496,13 +816,6 @@
           <div class="bg-gray-50 p-8 rounded-xl shadow-md">
             <h3 class="text-2xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
             
-            <!-- 
-              FORMSPREE EMAIL FORM SETUP INSTRUCTIONS:
-              1. Go to https://formspree.io/ and sign up for a free account
-              2. Get your Formspree form ID (it will look like email or hash)
-              3. Replace "YOUR_FORMSPREE_ID" in the form action below with your actual Formspree ID
-              4. That's it! Form submissions will be sent to your email
-            -->
             <form action="https://formspree.io/f/mdkdgygq" method="POST">
               <div class="mb-6">
                 <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
@@ -515,17 +828,18 @@
               </div>
               
               <div class="mb-6">
-                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
               </div>
               
               <div class="mb-6">
                 <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In *</label>
                 <select id="service" name="service" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                   <option value="">Select a service</option>
-                  <option value="audit">Audit Services</option>
-                  <option value="company-formation">Company Formation</option>
-                  <option value="accounting">Accounting Services</option>
+                  <option value="business-setup">Business Setup</option>
+                  <option value="immigration">Immigration & Visa</option>
+                  <option value="logistics">Freight Forwarding</option>
+                  <option value="accounting">Accounting & Audit</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -548,68 +862,73 @@
   <!-- Map Section -->
   <section class="h-96 bg-gray-200">
     <div id="map" class="h-full w-full">
-      <!-- 
-        GOOGLE MAPS SETUP INSTRUCTIONS:
-        1. Get a Google Maps API key from: https://developers.google.com/maps/documentation/javascript/get-api-key
-        2. Replace "YOUR_GOOGLE_MAPS_API_KEY" in the script tag at the top of this file
-        3. Update the initMap function below with your office coordinates
-      -->
+      <!-- Google Maps will be initialized here -->
     </div>
   </section>
 
- <!-- Footer -->
-<footer class="bg-blue-900 text-white py-12">
-  <div class="container mx-auto px-6">
-    <!-- Top 3-column section -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Column 1: Logo and address -->
-      <div>
-        <a href="#" class="text-2xl font-bold text-white flex items-center mb-6">
-          <span class="bg-white text-blue-900 px-3 py-1 rounded mr-2">S</span>
-          <span>Serventa</span>
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+        <!-- Column 1: Logo and address -->
+        <div>
+        <a href="#home" class="text-2xl font-bold text-white flex items-center mb-6 hover:text-yellow-300 transition-colors">
+            <span class="bg-white text-blue-900 px-3 py-1 rounded mr-2">S</span>
+            <span>Serventa</span>
         </a>
-        <p class="mb-4 opacity-80">Professional audit and business setup<br> services in the UAE since 2023.</p>
+        <p class="mb-4 opacity-80">Professional business, immigration and logistics services in the UAE.</p>
         <p class="mb-4 opacity-80">
-          6th Floor, Maydan Grandstand<br>
-          Meydan Road, Nad Al Sheba <br>
-          Dubai, UAE
+            Meydan Free Zone<br>
+            Dubai, UAE
         </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#home" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Home</a></li>
+            <li><a href="#about" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">About Us</a></li>
+            <li><a href="#services" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Our Services</a></li>
+            <li><a href="#why-us" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Why Choose Us</a></li>
+            <li><a href="#contact" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="#business" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Business Setup</a></li>
+            <li><a href="#immigration" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Immigration</a></li>
+            <li><a href="#logistics" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Freight Forwarding</a></li>
+            <li><a href="#business" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">PRO Services</a></li>
+            <li><a href="#business" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Accounting & Audit</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Legal Information</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Privacy Policy</a></li>
+          </ul>
+          <div class="mt-6">
+            <h4 class="font-medium mb-2">Certifications</h4>
+            <p class="opacity-80 text-sm">Licensed by Meydan Free Zone</p>
+            <p class="opacity-80 text-sm">Registered Business Entity – UAE</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Column 2: Services -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Services</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Financial Audits</a></li>
-          <li><a href="#" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Company Formation</a></li>
-          <li><a href="#" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Accounting Services</a></li>
-          <li><a href="#" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">VAT Compliance</a></li>
-          <li><a href="#" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Business Licensing</a></li>
-        </ul>
+      <!-- Bottom full-width copyright section -->
+      <div class="border-t border-blue-800 mt-12 pt-8 text-center opacity-80">
+        <p>&copy; 2025 Serventa LLC. All rights reserved.</p>
       </div>
-
-      <!-- Column 3: Quick Links -->
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-        <ul class="space-y-2">
-          <li><a href="#home" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Home</a></li>
-          <li><a href="#about" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">About Us</a></li>
-          <li><a href="#services" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Services</a></li>
-          <li><a href="#why-us" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Why Choose Us</a></li>
-          <li><a href="#contact" class="footer-link opacity-80 hover:opacity-100 hover:text-yellow-300 transition">Contact</a></li>
-        </ul>
-      </div>
-
     </div>
-
-    <!-- Bottom full-width copyright section -->
-    <div class="border-t border-blue-800 mt-12 pt-8 text-center opacity-80">
-      <p>&copy; 2025 Serventa. All rights reserved. Founded by Ishtiaq Ahmad.</p>
-    </div>
-  </div>
-</footer>
-
+  </footer>
 
   <script>
     // Mobile menu toggle
@@ -636,8 +955,7 @@
     
     // Google Maps Initialization
     function initMap() {
-      // UPDATE THESE COORDINATES TO YOUR OFFICE LOCATION
-      const officeLocation = { lat: 25.155852203055996, lng: 55.300333383317145 }; // Business Bay coordinates
+      const officeLocation = { lat: 25.155852203055996, lng: 55.300333383317145 }; // Meydan Free Zone coordinates
       const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 15,
         center: officeLocation,
